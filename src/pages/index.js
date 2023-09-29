@@ -6,7 +6,7 @@ const bebas = Bebas_Neue({ subsets: ['latin'], weight: '400' })
 
 export default function Home() {
   return (
-  <div className={bebas.className}>
+  <div className={bebas}>
     <Landing />
   </div>
   )
