@@ -3,8 +3,8 @@ import styles from './styles/Footer.module.css'
 import Image from 'next/image'
 const Footer = () => {
   return (
-    <footer className={styles.footer}>
-    <div className={`${styles.footerText} flex justify-center items-center gap-7 w-screen`}>
+    <footer className={`${styles.footer}`}>
+    <div className={`${styles.footerText} flex justify-center items-center gap-7 w-screen max-sm:flex-col max-sm:gap-1`}>
         <a href="">POLITICAS DE SEGURIDAD</a>
         <a href="">TERMINOS Y CONDICIONES</a>
         <a href="">CONTACTO</a>
