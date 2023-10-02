@@ -1,24 +1,32 @@
-
 import React, { useState } from 'react';
 
-function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
+const ContactForm = () => {
+  const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+    if (name === 'name') {
+      setName(value);
+    } else if (name === 'email') {
+      setEmail(value);
+    } else if (name === 'message') {
+      setMessage(value);
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    console.log('Formulario enviado:', formData);
+    // Aquí puedes agregar la lógica para enviar el mensaje y los datos
+    console.log('Mensaje enviado:', message);
+    console.log('Nombre:', name);
+    console.log('Email:', email);
+
     // Limpia los campos después de enviar
-    setFormData({ name: '', email: '', message: '' });
+    setMessage('');
+    setName('');
+    setEmail('');
   };
 
   return (
@@ -30,12 +38,41 @@ function ContactForm() {
             Nombre
           </label>
           <input
-            type="text"
             id="name"
             name="name"
+            type="text"
             className="border rounded w-full py-2 px-3"
             placeholder="Tu nombre"
-            value={formData.name}
+            value={name}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="email" className="block text-gray-700 font-bold mb-2">
+            Correo Electrónico
+          </label>
+          <input
+            id="email"
+            name="email"
+            type="email"
+            className="border rounded w-full py-2 px-3"
+            placeholder="tucorreo@example.com"
+            value={email}
+            onChange={handleInputChange}
+            required
+          />
+        </div>
+        <div className="mb-4">
+          <label htmlFor="message" className="block text-gray-700 font-bold mb-2">
+            Mensaje
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            className="border rounded w-full py-2 px-3"
+            placeholder="Escribe tu mensaje aquí"
+            value={message}
             onChange={handleInputChange}
             required
           />
@@ -49,6 +86,6 @@ function ContactForm() {
       </form>
     </div>
   );
-}
+};
 
 export default ContactForm;

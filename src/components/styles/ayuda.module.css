@@ -1,33 +1,38 @@
 /* Estilos para FAQItem */
 .accordion-header {
-    cursor: pointer;
-    background-color: #020B12;
-    padding: 10px;
-    border-bottom: 1px solid #DB5860;
-  }
+  cursor: pointer;
+  background-color: #020B12;
+  padding: 10px;
+  border-bottom: 1px solid #DB5860;
+}
   
-  .accordion-header button {
-    background-color: #31130C;
-    color: #DB5860;
-    font-size: 16px;
-    padding: 0px;
-    border-radius: 0;
-  }
+.accordion-header button {
+  background-color: transparent;
+  color: #DB5860;
+  font-size: 16px;
+  padding: 0px;
+  border-radius: 0;
+}
+
+.accordion-header button:hover {
+  color: white;
+  text-decoration: underline;
+}
   
-  .accordion-header button:hover {
-    color: white;
-  }
-  
-  .accordion-body {
-    background-color: #020B12;
-    color: white;
-    line-height: 2.0;
-    box-shadow: none;
-  }
-  
-  p {
-    color: #DB5860;
-  }
+.accordion-body {
+  background-color: #020B12;
+  color: white;
+  line-height: 2.0;
+  display: none; /* Inicialmente oculto */
+}
+
+.accordion-body.open {
+  display: block; /* Muestra cuando está abierto */
+}
+
+p {
+  color: #DB5860;
+}
   
   /* Estilos para FAQSection */
   .accordion-item {
@@ -41,6 +46,7 @@
   
   .accordion-button:hover {
     color: white;
+    text-decoration: underline;
   }
   
   .accordion-collapse {

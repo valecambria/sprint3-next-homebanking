@@ -1,5 +1,5 @@
 import React from 'react';
-import FAQSection from './FaqSection';
+import FAQSection from './FAQSection';
 import FAQItem from './FAQItem';
 import Header from './Header';
 import Footer from './Footer';
